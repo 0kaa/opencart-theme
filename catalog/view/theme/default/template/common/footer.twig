@@ -1,4 +1,4 @@
-<footer>
+<footer class="site-footer">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3">
@@ -12,7 +12,7 @@
 			</div>
 			{% if informations %}
 				<div class="col-sm-2">
-					<h5>{{ text_information }}</h5>
+					<h5 class="footer-title">{{ text_information }}</h5>
 					<ul class="list-unstyled">
 
 						<li>
@@ -30,16 +30,25 @@
 				</div>
 			{% endif %}
 			<div class="col-sm-3">
-				<h5>{{ text_service }}</h5>
-				<ul class="list-unstyled">
+				<h5 class="footer-title">{{ text_service }}</h5>
+				<ul class="list-unstyled column-2">
 
 					<li>
-						
+						<a href="{{ manufacturer }}">{{ text_manufacturer }}</a>
+					</li>
+					<li>
+						<a href="{{ voucher }}">{{ text_voucher }}</a>
+					</li>
+					<li>
+						<a href="{{ affiliate }}">{{ text_affiliate }}</a>
+					</li>
+					<li>
+						<a href="{{ special }}">{{ text_special }}</a>
 					</li>
 				</ul>
 			</div>
 			<div class="col">
-				<h5>{{ text_extra }}</h5>
+				<h5 class="footer-title">{{ text_extra }}</h5>
 				<ul class="list-unstyled">
 					<li>
 						Address:
@@ -66,14 +75,13 @@
 			</div>
 
 		</div>
-		<hr>
-		<p>{{ powered }}</p>
 	</div>
 </footer>
+<div class="footer-copyright">
+	<div class="container">
+		<span>{{ powered }}</span>
+	</div>
+</div>
 {% for script in scripts %}
 	<script src="{{ script }}" type="text/javascript"></script>
-{% endfor %}
-<!--
-OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
-Please donate via PayPal to donate@opencart.com
-//--></body></html>
+{% endfor %}</body></html>

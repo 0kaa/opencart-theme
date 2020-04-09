@@ -1,0 +1,41 @@
+.site-footer {
+    background-color: $main;
+    color: #eeeeee;
+    padding: 60px 0;
+    font-size: 16px;
+
+    .footer-title {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    ul {
+        &.column-2 {
+            column-count: 2;
+        }
+
+        li {
+            margin-bottom: 10px;
+
+            a {
+                @include trans(all, .3s, linear);
+                color: #eeeeee;
+                text-decoration: none;
+
+                &:hover {
+                    color: $light;
+                }
+            }
+        }
+    }
+}
+
+.footer-copyright {
+    background-color: $dark;
+    color: #eeeeee;
+    padding: 20px 0;
+    font-size: 16px;
+}
