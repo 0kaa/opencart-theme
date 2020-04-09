@@ -7,6 +7,8 @@ class ControllerCommonFooter extends Controller
 
 		$this->load->model('catalog/information');
 
+		$this->load->model('setting/extension');
+
 		$data['informations'] = array();
 
 		foreach ($this->model_catalog_information->getInformations() as $result) {
@@ -76,6 +78,19 @@ class ControllerCommonFooter extends Controller
 			}
 
 			$this->model_tool_online->addOnline($ip, $this->customer->getId(), $url, $referer);
+		}
+		$data['socials'] = array();
+
+		$results = $this->model_setting_module->getModulesByCode('social_links');
+
+		foreach ($results as $key => $result) {
+			$setting_info = json_decode($result['setting'], true);
+
+			$data['socials'][] = array(
+				'name'	=> $result['name'],
+				'setting' => $setting_info,
+
+			);
 		}
 
 		$data['scripts'] = $this->document->getScripts('footer');

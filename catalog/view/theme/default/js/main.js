@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    
+        // Scroll To Top
+        $('#top').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
 
   /* --------------------
 		01- Remove PlaceHolder.

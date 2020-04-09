@@ -79,7 +79,21 @@
 </footer>
 <div class="footer-copyright">
 	<div class="container">
-		<span>{{ powered }}</span>
+		<div class="d-flex justify-content-between align-items-center position-relative">
+			<span>{{ powered }}</span>
+			<a id="top" data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Back to top">
+				<i class="fa fa-angle-up" aria-hidden="true"></i>
+			</a>
+			<ul class="list-unstyled ae-social">
+				{% for social in socials %}
+					<li data-toggle="tooltip" data-placement="bottom" title="{{social.setting.name}}" data-original-title="{{social.setting.name}}">
+						<a class="{{social.setting.name}}-icon" href="{{social.setting.link}}" target="_blank">
+							<i class="{{social.setting.icon_class}}"></i>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
 </div>
 {% for script in scripts %}

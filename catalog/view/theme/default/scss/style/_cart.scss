@@ -1,0 +1,37 @@
+#cart {
+    ul {
+
+        li {
+            color: #333;
+            font-size: 14px;
+
+            a {
+                color: #333;
+
+                &.view-cart {
+                    padding: 10px;
+                    background-color: $main;
+                    color: #fff;
+                    margin-bottom: 1rem;
+                    display: inline-block;
+                }
+
+                &.checkout {
+                    padding: 10px;
+                    background-color: $sec;
+                    color: #fff;
+                    margin-bottom: 1rem;
+                    display: inline-block;
+                }
+            }
+
+            p {
+                margin: 0;
+
+                &.text-empty {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}

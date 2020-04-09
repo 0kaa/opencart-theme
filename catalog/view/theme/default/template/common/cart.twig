@@ -2,7 +2,7 @@
 	<button type="button" data-toggle="dropdown" data-loading-text="{{ text_loading }}" class="btn btn-inverse">
 		<i class="fa fa-shopping-basket"></i>
 		{% for product in products %}
-		{{product.total}}
+			{{product.total}}
 		{% endfor %}
 	</button>
 	<ul class="dropdown-menu pull-right">
@@ -11,12 +11,12 @@
 				<table class="table table-striped">
 					{% for product in products %}
 						<tr>
-							<td class="text-center">
+							<td class="text-center align-middle">
 								{% if product.thumb %}
 									<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail"/></a>
 								{% endif %}
 							</td>
-							<td class="text-left">
+							<td class="text-left align-middle">
 								<a href="{{ product.href }}">{{ product.name }}</a>
 								{% if product.option %}
 									{% for option in product.option %}
@@ -33,9 +33,9 @@
 										{{ product.recurring }}</small>
 								{% endif %}
 							</td>
-							<td class="text-right">x {{ product.quantity }}</td>
-							<td class="text-right">{{ product.total }}</td>
-							<td class="text-center">
+							<td class="align-middle">x {{ product.quantity }}</td>
+							<td class="align-middle">{{ product.total }}</td>
+							<td class="text-center align-middle">
 								<button type="button" onclick="cart.remove('{{ product.cart_id }}');" title="{{ button_remove }}" class="btn btn-danger btn-xs">
 									<i class="fa fa-times"></i>
 								</button>
@@ -46,8 +46,8 @@
 						<tr>
 							<td class="text-center"></td>
 							<td class="text-left">{{ voucher.description }}</td>
-							<td class="text-right">x&nbsp;1</td>
-							<td class="text-right">{{ voucher.amount }}</td>
+							<td>x&nbsp;1</td>
+							<td>{{ voucher.amount }}</td>
 							<td class="text-center text-danger">
 								<button type="button" onclick="voucher.remove('{{ voucher.key }}');" title="{{ button_remove }}" class="btn btn-danger btn-xs">
 									<i class="fa fa-times"></i>
@@ -62,29 +62,32 @@
 					<table class="table table-bordered">
 						{% for total in totals %}
 							<tr>
-								<td class="text-right">
+								<td>
 									<strong>{{ total.title }}</strong>
 								</td>
-								<td class="text-right">{{ total.text }}</td>
+								<td>{{ total.text }}</td>
 							</tr>
 						{% endfor %}
 					</table>
-					<p class="text-right">
-						<a href="{{ cart }}">
+					<p class="text-center">
+						<a class="view-cart" href="{{ cart }}">
 							<strong>
 								<i class="fa fa-shopping-cart"></i>
 								{{ text_cart }}</strong>
-						</a>&nbsp;&nbsp;&nbsp;<a href="{{ checkout }}">
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<a class="checkout" href="{{ checkout }}">
 							<strong>
 								<i class="fa fa-share"></i>
-								{{ text_checkout }}</strong>
+								{{ text_checkout }}
+							</strong>
 						</a>
 					</p>
 				</div>
 			</li>
 		{% else %}
 			<li>
-				<p class="text-center">{{ text_empty }}</p>
+				<p class="text-center text-empty">{{ text_empty }}</p>
 			</li>
 		{% endif %}
 	</ul>
