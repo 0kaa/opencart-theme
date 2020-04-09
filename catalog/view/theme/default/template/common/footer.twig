@@ -1,0 +1,79 @@
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				{% if logo %}
+					<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-fluid "/></a>
+				{% else %}
+					<h1>
+						<a href="{{ home }}">{{ name }}</a>
+					</h1>
+				{% endif %}
+			</div>
+			{% if informations %}
+				<div class="col-sm-2">
+					<h5>{{ text_information }}</h5>
+					<ul class="list-unstyled">
+
+						<li>
+							<a href="{{home}}">Home</a>
+						</li>
+						{% for information in informations %}
+							<li>
+								<a href="{{ information.href }}">{{ information.title }}</a>
+							</li>
+						{% endfor %}
+						<li>
+							<a href="{{ contact }}">{{ text_contact }}</a>
+						</li>
+					</ul>
+				</div>
+			{% endif %}
+			<div class="col-sm-3">
+				<h5>{{ text_service }}</h5>
+				<ul class="list-unstyled">
+
+					<li>
+						
+					</li>
+				</ul>
+			</div>
+			<div class="col">
+				<h5>{{ text_extra }}</h5>
+				<ul class="list-unstyled">
+					<li>
+						Address:
+						{{config_address}}
+					</li>
+					<li>
+						Phone:
+						<a href="tel:{{ telephone }}">{{ telephone }}</a>
+					</li>
+					<li>
+						Mobile:
+						<a href="tel:{{ telephone }}">{{ telephone }}</a>
+					</li>
+					<li>
+						WhatsApp:
+						<a href="https://wa.me/20{{whatsapp}}">{{ whatsapp }}</a>
+
+					</li>
+					<li>
+						E-mail:
+						<a href="mailto:{{ config_email }}">{{ config_email }}</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<hr>
+		<p>{{ powered }}</p>
+	</div>
+</footer>
+{% for script in scripts %}
+	<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//--></body></html>

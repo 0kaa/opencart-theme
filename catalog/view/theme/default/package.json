@@ -1,0 +1,34 @@
+{
+  "name": "theme",
+  "version": "1.0.0",
+  "description": "my Gulp",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-compress": "0.0.9",
+    "gulp-sourcemaps": "^2.6.5",
+    "pug": "^2.0.4",
+    "static-server": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-image": "^5.1.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.0",
+    "vinyl-ftp": "^0.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "0kaa",
+  "license": "ISC",
+  "keywords": [
+    "wordpress",
+    "theme"
+  ]
+}

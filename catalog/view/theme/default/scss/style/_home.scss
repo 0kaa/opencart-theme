@@ -1,0 +1,173 @@
+.slider-ground {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+
+.deals {
+    padding: 100px 0 80px;
+
+
+
+    .owl-carousel .owl-nav .owl-prev,
+    .owl-carousel .owl-nav .owl-next {
+        position: absolute;
+        top: 20%;
+        padding: 6px 12px !important;
+        text-align: center;
+        font-size: 30px;
+        border: 0px;
+        background-color: #00737a;
+        color: #fff;
+    }
+
+    .owl-carousel .owl-nav {
+        display: block;
+    }
+
+    .owl-carousel .owl-prev {
+        left: 0;
+    }
+
+    .owl-carousel .owl-next {
+        right: 0;
+    }
+}
+
+.product-layout {
+    padding: 0 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    overflow: hidden;
+
+    &:hover {
+        border: 2px solid $main;
+
+        .product-meta {
+            .add-to-cart {
+                right: 10px;
+                opacity: 1;
+            }
+        }
+    }
+
+    .product-thumb {
+        img {
+            width: auto;
+            margin: auto;
+        }
+    }
+
+    .product-meta {
+        padding: 20px;
+        position: relative;
+
+        .product-manufacturer {
+            color: #647184;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+        }
+
+        .price {
+            color: #212f59;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 0;
+
+            .price-old {
+                color: #999;
+                text-decoration: line-through;
+                margin-left: 10px;
+            }
+        }
+
+
+        .add-to-cart {
+            position: absolute;
+            bottom: 10px;
+            right: -100%;
+            -webkit-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            opacity: 0;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px !important;
+            padding: 8px 12px;
+            border-radius: 3px;
+            outline: inherit;
+            background-color: $sec;
+            border: none;
+
+            &:hover {
+                background-color: $main;
+            }
+        }
+    }
+}
+
+.carousel {
+    .tools-carousel {
+        .owl-nav {
+            width: 0;
+            height: 0;
+            display: block;
+
+            button {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+                height: 100%;
+                width: 50%;
+                outline: inherit;
+
+                span {
+                    display: none;
+                }
+
+                &.owl-prev {
+                    left: 0;
+                }
+
+                &.owl-next {
+                    right: 0;
+                    left: inherit;
+                }
+            }
+        }
+
+        .owl-dots {
+            display: block;
+
+            button {
+                width: 20px;
+                height: 10px;
+                background: white;
+                border-radius: 50px;
+                position: absolute;
+                left: 0;
+                bottom: 10px;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.latest {
+    padding: 50px 0 100px;
+}

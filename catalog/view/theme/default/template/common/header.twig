@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+	<html
+	dir="{{ direction }}" lang="{{ lang }}"> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{ title }}</title>
+		<base href="{{ base }}"/>
+		{% if description %}
+			<meta name="description" content="{{ description }}"/>
+		{% endif %}
+		{% if keywords %}
+			<meta name="keywords" content="{{ keywords }}"/>
+		{% endif %}
+		<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<script src="catalog/view/javascript/jquery/popper.min.js" type="text/javascript"></script>
+		<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="catalog/view/javascript/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+		<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="catalog/view/theme/default/stylesheet/owl.carousel.min.css" rel="stylesheet">
+		<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+		{% for style in styles %}
+			<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}"/>
+		{% endfor %}
+		{% for script in scripts %}
+			<script src="{{ script }}" type="text/javascript"></script>
+		{% endfor %}
+		<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+		<script src="catalog/view/theme/default/js/owl.carousel.min.js" type="text/javascript"></script>
+		<script src="catalog/view/theme/default/js/main.js" type="text/javascript"></script>
+		{% for link in links %}
+			<link href="{{ link.href }}" rel="{{ link.rel }}"/>
+		{% endfor %}
+		{% for analytic in analytics %}
+			{{ analytic }}
+		{% endfor %}
+	</head>
+	<body>
+		<header class="ae-header">
+			<div class="container">
+				<div class="d-flex justify-content-between">
+					<div class="d-flex align-items-center">
+						<div id="logo">
+							{% if logo %}
+								<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-fluid "/></a>
+							{% else %}
+								<h1>
+									<a href="{{ home }}">{{ name }}</a>
+								</h1>
+							{% endif %}
+						</div>
+					</div>
+					<div class="d-flex align-items-center">{{ search }}</div>
+					<div class="d-flex align-items-center">
+
+						{% if logged %}
+							<a href="{{ account }}">
+								<i class="fa fa-user"></i>
+								{{ text_account }}
+							</a>
+						{% else %}
+							<ul class="list-unstyled d-flex align-items-center justify-content-between login-bar">
+								<li>
+									<a href="{{ login }}">
+										<i class="fa fa-user"></i>
+										{{text_login}}
+									</a>
+								</li>
+								<li class="separator">/</li>
+								<li>
+									<a href="{{ register }}">{{ text_register }}</a>
+								</li>
+							</ul>
+						{% endif %}
+						{{ cart }}
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<nav id="ae-primary-nav">
+			<div class="container">
+				<div class="d-flex align-items-center justify-content-between">
+					{{ menu }}
+					{% if informations %}
+						<div class="d-flex align-items-center">
+							<ul class="d-flex align-items-center list-unstyled nav-wrap">
+								<li>
+									<a href="{{home}}">Home</a>
+								</li>
+								{% for information in informations %}
+									<li>
+										<a href="{{ information.href }}">{{ information.title }}</a>
+									</li>
+								{% endfor %}
+								<li>
+									<a href="{{contact}}">Contact Us</a>
+								</li>
+							</ul>
+						</div>
+					{% endif %}
+					<div class="d-flex align-items-center">
+						<ul class="list-unstyled ae-social">
+							{% for social in socials %}
+								<li data-toggle="tooltip" data-placement="bottom" title="{{social.setting.name}}" data-original-title="{{social.setting.name}}">
+									<a class="{{social.setting.name}}-icon" href="{{social.setting.link}}" target="_blank">
+										<i class="{{social.setting.icon_class}}"></i>
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+	</body>
+</html>
