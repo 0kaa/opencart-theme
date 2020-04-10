@@ -1,9 +1,6 @@
 <div id="cart">
 	<button type="button" data-toggle="dropdown" data-loading-text="{{ text_loading }}" class="btn btn-inverse">
 		<i class="fa fa-shopping-basket"></i>
-		{% for product in products %}
-			{{product.total}}
-		{% endfor %}
 	</button>
 	<ul class="dropdown-menu pull-right">
 		{% if products or vouchers %}
@@ -72,7 +69,7 @@
 					<p class="text-center">
 						<a class="view-cart" href="{{ cart }}">
 							<strong>
-								<i class="fa fa-shopping-cart"></i>
+								<i class="fa fa-shopping-basket"></i>
 								{{ text_cart }}</strong>
 						</a>
 						&nbsp;&nbsp;&nbsp;

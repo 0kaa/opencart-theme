@@ -1,0 +1,103 @@
+.product-page {
+    padding: 70px 0;
+
+    .left-content {
+        .thumbnails {
+            list-style: none;
+            overflow: hidden;
+            margin-bottom: 30px;
+
+            li {
+                margin-bottom: 30px;
+
+                &:first-child {
+                    img {
+                        display: block;
+                        margin: auto;
+                    }
+                }
+
+                &:nth-child(2) {
+                    margin: 0 !important;
+                }
+
+                &.image-additional {
+
+                    float: left;
+                    margin-left: 20px;
+
+                    a {
+                        padding: 5px;
+                        display: block;
+                        border: 1px solid #ddd;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .right-content {
+        h1 {
+            font-size: 32px;
+        }
+
+        .product-price,
+        .price-new {
+            color: $main;
+            font-size: 28px;
+
+            h2 {
+                font-weight: 600;
+            }
+        }
+
+        .price-old {
+            color: $sec;
+            font-size: 16px;
+        }
+
+        #product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include m576 {
+                display: block;
+            }
+
+            .select-qty {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex: 0 0 49%;
+                background-color: #eee;
+                text-align: center;
+                padding: 10px;
+
+                @include m576 {
+                    flex: auto;
+                    margin-bottom: 20px;
+                }
+
+                label {
+                    flex: 0 0 50%;
+                    margin: 0;
+                    font-weight: 600;
+                    font-size: 16px;
+
+                }
+            }
+
+            .ae-btn {
+                flex: 0 0 49%;
+                padding: 18px;
+
+                @include m576 {
+                    flex: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

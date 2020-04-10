@@ -1,5 +1,7 @@
 ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 body {
@@ -63,3 +65,18 @@ body {
     }
 }
 
+.ae-btn {
+    background-color: $main;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    outline: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    @include trans(all, .3s, ease-in-out);
+
+    &:hover {
+        background-color: $sec;
+    }
+}
