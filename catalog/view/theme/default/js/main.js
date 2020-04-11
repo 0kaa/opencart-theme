@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
         // Scroll To Top
         $('#top').click(function () {
             $('body,html').animate({
@@ -7,6 +7,11 @@ $(document).ready(function () {
             }, 800);
             return false;
         });
+
+    $('.rating-group label').click(function () {
+        $(this).parent('.rating-group').addClass('selected');
+        $(this).addClass('active').siblings().removeClass('active');
+    });
 
   /* --------------------
 		01- Remove PlaceHolder.
@@ -114,4 +119,30 @@ $(document).ready(function () {
         'cursor': 'url("' + test + 'next.svg"), auto'
     });
 
+    /* --------------------
+		07- Toggle Menu Mobile
+    ----------------------- */
+
+    $('.menu-toggle-button').click(function (e) {
+        e.preventDefault();
+        $('.nav-menu-toggle').addClass('is-open-left');
+    });
+
+    $('#menu-toggle-button-close').click(function () {
+        $('.nav-menu-toggle').removeClass('is-open-left');
+    });
+
+
+    /* --------------------
+		08- Footer Toggle
+    ----------------------- */
+    function mmFooterToggle() {
+        if ($(window).width() < 992) {
+            $('.widget .widget-title').click(function (event) {
+                $(this).next('div').stop(true, false, true).toggleClass('widget-on');
+                event.stopPropagation();
+            });
+        }
+    }
+    mmFooterToggle();
 });

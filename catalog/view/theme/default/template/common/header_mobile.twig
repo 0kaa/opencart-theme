@@ -43,84 +43,7 @@
 		{% endfor %}
 	</head>
 	<body>
-		<header class="ae-header">
-			<div class="container">
-				<div class="d-flex justify-content-between">
-					<div class="d-flex align-items-center">
-						<div id="logo">
-							{% if logo %}
-								<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-fluid "/></a>
-							{% else %}
-								<h1>
-									<a href="{{ home }}">{{ name }}</a>
-								</h1>
-							{% endif %}
-						</div>
-					</div>
-					<div class="d-flex align-items-center">{{ search }}</div>
-					<div class="d-flex align-items-center">
-
-						{% if logged %}
-							<a href="{{ account }}">
-								<i class="fa fa-user"></i>
-								{{ text_account }}
-							</a>
-						{% else %}
-							<ul class="list-unstyled d-flex align-items-center justify-content-between login-bar">
-								<li>
-									<a href="{{ login }}">
-										<i class="fa fa-user"></i>
-										{{text_login}}
-									</a>
-								</li>
-								<li class="separator">/</li>
-								<li>
-									<a href="{{ register }}">{{ text_register }}</a>
-								</li>
-							</ul>
-						{% endif %}
-						{{ cart }}
-					</div>
-				</div>
-			</div>
-			<nav id="ae-primary-nav">
-				<div class="container">
-					<div class="d-flex align-items-center justify-content-between">
-						{{ menu }}
-						{% if informations %}
-							<div class="d-flex align-items-center">
-								<ul class="d-flex align-items-center list-unstyled nav-wrap">
-									<li>
-										<a href="{{home}}">Home</a>
-									</li>
-									{% for information in informations %}
-										<li>
-											<a href="{{ information.href }}">{{ information.title }}</a>
-										</li>
-									{% endfor %}
-									<li>
-										<a href="{{contact}}">Contact Us</a>
-									</li>
-								</ul>
-							</div>
-						{% endif %}
-						<div class="d-flex align-items-center">
-							<ul class="list-unstyled ae-social">
-								{% for social in socials %}
-									<li data-toggle="tooltip" data-placement="bottom" title="{{social.setting.name}}" data-original-title="{{social.setting.name}}">
-										<a class="{{social.setting.name}}-icon" href="{{social.setting.link}}" target="_blank">
-											<i class="{{social.setting.icon_class}}"></i>
-										</a>
-									</li>
-								{% endfor %}
-							</ul>
-						</div>
-
-					</div>
-				</div>
-			</nav>
-		</header>
-		<div id="ae-header-mobile" class="ae-header-mobile">
+		<div id="ae-header" class="ae-header-mobile">
 			<div class="header-top-bar">
 				<div class="container">
 					<div class="d-flex justify-content-between">
@@ -220,6 +143,5 @@
 
 			</div>
 		</nav>
-
 	</body>
 </html>

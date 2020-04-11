@@ -1,0 +1,32 @@
+.list-wrap {
+    background-color: $main;
+    padding: 20px 20px 10px 20px;
+
+    .widget-title {
+        h4 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+
+        }
+    }
+
+    .list-item {
+        color: #fff;
+        padding: 8px 12px;
+        font-size: 16px;
+
+        &.active {
+            a {
+                color: $light;
+            }
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}

@@ -65,6 +65,10 @@ body {
     }
 }
 
+.buttons {
+    margin: 1em 0;
+}
+
 .ae-btn {
     background-color: $main;
     border: none;
@@ -75,8 +79,47 @@ body {
     font-weight: 600;
     font-size: 14px;
     @include trans(all, .3s, ease-in-out);
+    text-decoration: none;
 
     &:hover {
+        text-decoration: none;
         background-color: $sec;
+        color: #fff;
+    }
+}
+
+.ae-btn-default {
+    background-color: $sec;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    outline: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    @include trans(all, .3s, ease-in-out);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $main;
+        color: #fff;
+    }
+}
+
+.list-group {
+    .list-group-item {
+        color: #333;
+        font-weight: 600;
+    }
+}
+
+.page-content {
+    padding: 70px 0;
+}
+
+#column-right {
+    @include m768 {
+        display: none;
     }
 }

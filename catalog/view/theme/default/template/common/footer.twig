@@ -2,76 +2,105 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3">
-				{% if logo %}
-					<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-fluid "/></a>
-				{% else %}
-					<h1>
-						<a href="{{ home }}">{{ name }}</a>
-					</h1>
-				{% endif %}
+				<div class="widget">
+					{% if logo %}
+						<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-fluid "/></a>
+					{% else %}
+						<h1>
+							<a href="{{ home }}">{{ name }}</a>
+						</h1>
+					{% endif %}
+				</div>
 			</div>
 			{% if informations %}
 				<div class="col-sm-2">
-					<h5 class="footer-title">{{ text_information }}</h5>
-					<ul class="list-unstyled">
+					<div class="widget">
+						<div class="widget-title">
+							<h5 class="footer-title">{{ text_information }}</h5>
+							<span class="dropdown">
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</div>
+						<div class="widget-inner">
+							<ul class="list-unstyled">
 
-						<li>
-							<a href="{{home}}">Home</a>
-						</li>
-						{% for information in informations %}
-							<li>
-								<a href="{{ information.href }}">{{ information.title }}</a>
-							</li>
-						{% endfor %}
-						<li>
-							<a href="{{ contact }}">{{ text_contact }}</a>
-						</li>
-					</ul>
+								<li>
+									<a href="{{home}}">Home</a>
+								</li>
+								{% for information in informations %}
+									<li>
+										<a href="{{ information.href }}">{{ information.title }}</a>
+									</li>
+								{% endfor %}
+								<li>
+									<a href="{{ contact }}">{{ text_contact }}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			{% endif %}
 			<div class="col-sm-3">
-				<h5 class="footer-title">{{ text_service }}</h5>
-				<ul class="list-unstyled column-2">
+				<div class="widget">
+					<div class="widget-title">
+						<h5 class="footer-title">{{ text_service }}</h5>
+						<span class="dropdown">
+							<i class="fa fa-angle-down"></i>
+						</span>
+					</div>
+					<div class="widget-inner">
+						<ul class="list-unstyled column-2">
 
-					<li>
-						<a href="{{ manufacturer }}">{{ text_manufacturer }}</a>
-					</li>
-					<li>
-						<a href="{{ voucher }}">{{ text_voucher }}</a>
-					</li>
-					<li>
-						<a href="{{ affiliate }}">{{ text_affiliate }}</a>
-					</li>
-					<li>
-						<a href="{{ special }}">{{ text_special }}</a>
-					</li>
-				</ul>
+							<li>
+								<a href="{{ manufacturer }}">{{ text_manufacturer }}</a>
+							</li>
+							<li>
+								<a href="{{ voucher }}">{{ text_voucher }}</a>
+							</li>
+							<li>
+								<a href="{{ affiliate }}">{{ text_affiliate }}</a>
+							</li>
+							<li>
+								<a href="{{ special }}">{{ text_special }}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="col">
-				<h5 class="footer-title">{{ text_extra }}</h5>
-				<ul class="list-unstyled">
-					<li>
-						Address:
-						{{config_address}}
-					</li>
-					<li>
-						Phone:
-						<a href="tel:{{ telephone }}">{{ telephone }}</a>
-					</li>
-					<li>
-						Mobile:
-						<a href="tel:{{ telephone }}">{{ telephone }}</a>
-					</li>
-					<li>
-						WhatsApp:
-						<a href="https://wa.me/20{{whatsapp}}">{{ whatsapp }}</a>
+				<div class="widget">
+					<div class="widget-title">
+						<h5 class="footer-title">{{ text_extra }}</h5>
+						<span class="dropdown">
+							<i class="fa fa-angle-down"></i>
+						</span>
+					</div>
+					<div class="widget-inner">
+						<ul class="list-unstyled">
+							<li>
+								Address:
+								{{config_address}}
+							</li>
+							<li>
+								Phone:
+								<a href="tel:{{ telephone }}">{{ telephone }}</a>
+							</li>
+							<li>
+								Mobile:
+								<a href="tel:{{ telephone }}">{{ telephone }}</a>
+							</li>
+							<li>
+								WhatsApp:
+								<a href="https://wa.me/20{{whatsapp}}">{{ whatsapp }}</a>
 
-					</li>
-					<li>
-						E-mail:
-						<a href="mailto:{{ config_email }}">{{ config_email }}</a>
-					</li>
-				</ul>
+							</li>
+							<li>
+								E-mail:
+								<a href="mailto:{{ config_email }}">{{ config_email }}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 
 		</div>

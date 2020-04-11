@@ -4,13 +4,48 @@
     padding: 60px 0;
     font-size: 16px;
 
-    .footer-title {
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #fff;
+    .widget {
         margin-bottom: 30px;
     }
+
+    .widget-inner {
+        position: relative;
+
+        @include m992 {
+            display: none;
+
+            &.widget-on {
+                display: block;
+            }
+        }
+
+    }
+
+    .widget-title {
+        position: relative;
+
+        .footer-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .dropdown {
+            display: none;
+
+            @include m768 {
+                position: absolute;
+                top: -4px;
+                right: 0;
+                color: #fff;
+                display: block;
+            }
+        }
+    }
+
+
 
     ul {
         &.column-2 {

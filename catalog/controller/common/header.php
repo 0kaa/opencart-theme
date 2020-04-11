@@ -5,6 +5,9 @@ class ControllerCommonHeader extends Controller
 	{
 		// Analytics
 		$this->load->model('setting/extension');
+		require_once('Mobile_Detect.php');
+
+		$detect = new Mobile_Detect();
 
 		$data['analytics'] = array();
 
@@ -96,7 +99,7 @@ class ControllerCommonHeader extends Controller
 
 		$results = $this->model_setting_module->getModulesByCode('social_links');
 
-		foreach($results as $key => $result) {
+		foreach ($results as $key => $result) {
 			$setting_info = json_decode($result['setting'], true);
 
 			$data['socials'][] = array(
@@ -105,6 +108,10 @@ class ControllerCommonHeader extends Controller
 
 			);
 		}
-		return $this->load->view('common/header', $data);
+		if ($detect->isMobile()) {
+			return $this->load->view('common/header_mobile', $data);
+		} else {
+			return $this->load->view('common/header', $data);
+		}
 	}
 }

@@ -100,4 +100,95 @@
             }
         }
     }
+
+    .tab-review {
+        .nav-link {
+            color: $sec;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            font-size: 16px;
+            display: inline-block;
+            margin-bottom: 20px;
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $sec;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+
+        .rating {
+            span {
+                color: $sec;
+            }
+        }
+    }
+
+    .review-form {
+        #review {
+            .no-reviews {
+                font-size: 16px;
+            }
+        }
+
+        .text-review {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .rating-group {
+            &.selected {
+                label {
+                    &:not(.active) {
+                        i {
+                            &:before {
+                                content: "\f005";
+                            }
+                        }
+                    }
+
+                    &.active~label {
+                        i {
+                            &:before {
+                                content: "\f006";
+                            }
+                        }
+                    }
+                }
+            }
+
+            label {
+                cursor: pointer;
+                margin: 0;
+
+                &:hover,
+                &.active {
+                    i {
+                        &:before {
+                            content: "\f005";
+                        }
+                    }
+                }
+            }
+
+            input {
+                display: none;
+            }
+        }
+
+        .control-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+
+    }
 }

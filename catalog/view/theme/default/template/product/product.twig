@@ -21,7 +21,7 @@
 							<ul class="thumbnails">
 								{% if thumb %}
 									<li>
-										<a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}"/></a>
+										<a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ popup }}" title="{{ heading_title }}" alt="{{ heading_title }}"/></a>
 									</li>
 								{% endif %}
 								{% if images %}
@@ -86,7 +86,7 @@
 					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
 					<!-- AddThis Button END -->
 				</div>
-				<div class="text-center mb-5">
+				<div class="text-center mb-5 tab-review">
 					<a href="#tab-review" data-toggle="tab" class="nav-link">{{ tab_review }}</a>
 					{% if review_status %}
 						<div class="rating">
@@ -111,32 +111,28 @@
 					<div class="review-form mb-5">
 						<form class="form-horizontal" id="form-review">
 							<div id="review"></div>
-							<h2>{{ text_write }}</h2>
+							<h2 class="text-review">{{ text_write }}</h2>
 
 							{% if review_guest %}
 								<div class="form-group required rating-group">
 
-									<span class="d-block">{{ entry_rating }}</span>
+									<span class="control-label d-block">{{ entry_rating }}</span>
 									<label for="rating1">
 										<i class="fa fa-star-o"></i>
 									</label>
 									<input type="radio" id="rating1" name="rating" value="1"/>
-									&nbsp;
 									<label for="rating2">
 										<i class="fa fa-star-o"></i>
 									</label>
 									<input type="radio" id="rating2" name="rating" value="2"/>
-									&nbsp;
 									<label for="rating3">
 										<i class="fa fa-star-o"></i>
 									</label>
 									<input type="radio" id="rating3" name="rating" value="3"/>
-									&nbsp;
 									<label for="rating4">
 										<i class="fa fa-star-o"></i>
 									</label>
 									<input type="radio" id="rating4" name="rating" value="4"/>
-									&nbsp;
 									<label for="rating5">
 										<i class="fa fa-star-o"></i>
 									</label>
@@ -217,17 +213,6 @@
 							{% set i = i + 1 %}
 						{% endfor %}
 					</div>
-				{% endif %}
-				{% if tags %}
-					<p>{{ text_tags }}
-						{% for i in 0..tags|length %}
-							{% if i < (tags|length - 1) %}
-								<a href="{{ tags[i].href }}">{{ tags[i].tag }}</a>,
-							{% else %}
-								<a href="{{ tags[i].href }}">{{ tags[i].tag }}</a>
-							{% endif %}
-						{% endfor %}
-					</p>
 				{% endif %}
 				{{ content_bottom }}</div>
 			{{ column_right }}</div>

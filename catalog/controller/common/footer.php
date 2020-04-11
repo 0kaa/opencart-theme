@@ -35,7 +35,8 @@ class ControllerCommonFooter extends Controller
 		} else {
 			$data['logo'] = '';
 		}
-
+		$data['name'] = $this->config->get('config_name');
+		$data['home'] = $this->url->link('common/home');
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['whatsapp'] = $this->config->get('config_whatsapp');
 		$data['config_address'] = $this->config->get('config_address');
