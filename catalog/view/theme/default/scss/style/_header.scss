@@ -97,6 +97,19 @@
         color: #fff;
         @include trans(all, .3s, linear);
         font-size: 18px;
+
+        &:hover {
+            color: $light;
+        }
+    }
+}
+
+.currency {
+    .btn-currency {
+        color: #fff;
+        text-decoration: none;
+        @include trans(all, .3s, linear);
+
         &:hover {
             color: $light;
         }
@@ -195,7 +208,6 @@
         left: 0;
         background: #FFF;
         z-index: 9999;
-        padding: 10px 20px;
         width: 100%;
         box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
 
@@ -210,10 +222,15 @@
                 font-size: 14px;
                 color: #222;
                 padding: 8px 15px;
-                font-weight: bold;
-                text-decoration: none;
+                font-weight: 500;
                 display: block;
                 position: relative;
+                @include trans(all, .2s, linear);
+
+                &:hover {
+                    color: $sec;
+                    padding: 8px 20px;
+                }
             }
         }
     }

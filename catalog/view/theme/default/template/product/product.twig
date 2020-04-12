@@ -14,7 +14,7 @@
 					{% if column_left or column_right %}
 						{% set class = 'col-sm-6' %}
 					{% else %}
-						{% set class = 'col-sm-6' %}
+						{% set class = 'col-sm-5' %}
 					{% endif %}
 					<div class="{{ class }} left-content">
 						{% if thumb or images %}
@@ -24,21 +24,13 @@
 										<a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ popup }}" title="{{ heading_title }}" alt="{{ heading_title }}"/></a>
 									</li>
 								{% endif %}
-								{% if images %}
-									{% for image in images %}
-										<li class="image-additional">
-											<a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}">
-												<img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}"/></a>
-										</li>
-									{% endfor %}
-								{% endif %}
 							</ul>
 						{% endif %}
 					</div>
 					{% if column_left or column_right %}
 						{% set class = 'col-sm-6' %}
 					{% else %}
-						{% set class = 'col-sm-6' %}
+						{% set class = 'col-sm-7' %}
 					{% endif %}
 					<div class="{{ class }} right-content">
 						<h1>{{ heading_title }}</h1>
@@ -64,9 +56,11 @@
 								<input type="number" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="rounded-0 form-control"/>
 								<input type="hidden" name="product_id" value="{{ product_id }}"/>
 							</div>
-							<button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="rounded-0 ae-btn">
-								<i class="fa fa-shopping-basket"></i>
-								{{ button_cart }}</button>
+							<div class="button-form">
+								<button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="rounded-0 ae-btn">
+									<i class="fa fa-shopping-basket"></i>
+									{{ button_cart }}</button>
+							</div>
 						</div>
 
 						<div class="product-description mb-5">{{ description }}</div>
@@ -75,7 +69,7 @@
 				</div>
 				{# End Of Row #}
 				<div
-					class="d-flex justify-content-center align-items-center">
+					class="d-flex justify-content-center align-items-center mb-4">
 					<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style" data-url="{{ share }}">
 						<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -161,48 +155,41 @@
 					<div class="heading mb-5">
 						<h3>{{ text_related }}</h3>
 					</div>
-					<div class="row">
-						{% set i = 0 %}
+					<ul class="product-wrap column-4 d-flex flex-wrap">
 						{% for product in products %}
-							{% if column_left and column_right %}
-								{% set class = 'col-8 col-sm-6' %}
-							{% elseif column_left or column_right %}
-								{% set class = 'col-6 col-md-4' %}
-							{% else %}
-								{% set class = 'col-6 col-sm-3' %}
-							{% endif %}
-							<div class="product-layout {{ class }}">
-								<div class="product-thumb transition">
-									<div class="image">
-										<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive"/></a>
+							<li class="product-layout">
+								<div class="product-inner">
+									<div class="product-thumb transition">
+										<div class="image">
+											<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive"/></a>
+										</div>
 									</div>
-								</div>
-								<div class="product-meta">
-									<a class="product-manufacturer" href="{{ product.manufacturer_href }}">{{ product.manufacturer }}</a>
+									<div class="product-meta">
+										<a class="product-manufacturer" href="{{ product.manufacturer_href }}">{{ product.manufacturer }}</a>
 
-									<h4 class="product-title">
-										<a href="{{ product.href }}">{{ product.name }}</a>
-									</h4>
+										<h4 class="product-title">
+											<a href="{{ product.href }}">{{ product.name }}</a>
+										</h4>
 
-									{% if product.price %}
-										<p class="price">
-											{% if not product.special %}
-												{{ product.price }}
-											{% else %}
-												<span class="price-new">{{ product.special }}</span>
-												<span class="price-old">{{ product.price }}</span>
-											{% endif %}
-										</p>
-									{% endif %}
-									<div class="button-group">
-										<button class="add-to-cart" type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');">
-											<i class="fa fa-shopping-basket"></i>
-										</button>
+										{% if product.price %}
+											<p class="price">
+												{% if not product.special %}
+													{{ product.price }}
+												{% else %}
+													<span class="price-new">{{ product.special }}</span>
+													<span class="price-old">{{ product.price }}</span>
+												{% endif %}
+											</p>
+										{% endif %}
+										<div class="button-group">
+											<button class="add-to-cart" type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');">
+												<i class="fa fa-shopping-basket"></i>
+											</button>
+										</div>
 									</div>
+
 								</div>
-
-
-							</div>
+							</li>
 							{% if column_left and column_right and (i + 1) % 2 == 0 %}
 								<div class="clearfix visible-md visible-sm"></div>
 							{% elseif column_left or column_right and (i + 1) % 3 == 0 %}
@@ -212,12 +199,13 @@
 							{% endif %}
 							{% set i = i + 1 %}
 						{% endfor %}
-					</div>
+					</ul>
 				{% endif %}
 				{{ content_bottom }}</div>
 			{{ column_right }}</div>
 	</div>
 </div>
+
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({

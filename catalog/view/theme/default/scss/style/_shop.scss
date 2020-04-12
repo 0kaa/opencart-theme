@@ -39,6 +39,7 @@
         .product-inner {
             overflow: hidden;
             border: 2px solid transparent;
+            height: 100%;
 
             &:hover {
                 border-color: $main;
