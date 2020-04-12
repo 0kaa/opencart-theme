@@ -1,6 +1,8 @@
 <?php
-class ControllerInformationInformation extends Controller {
-	public function index() {
+class ControllerInformationInformation extends Controller
+{
+	public function index()
+	{
 		$this->load->language('information/information');
 
 		$this->load->model('catalog/information');
@@ -11,9 +13,9 @@ class ControllerInformationInformation extends Controller {
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home')
 		);
-
+		
 		if (isset($this->request->get['information_id'])) {
-			$information_id = (int)$this->request->get['information_id'];
+			$information_id = (int) $this->request->get['information_id'];
 		} else {
 			$information_id = 0;
 		}
@@ -71,11 +73,12 @@ class ControllerInformationInformation extends Controller {
 		}
 	}
 
-	public function agree() {
+	public function agree()
+	{
 		$this->load->model('catalog/information');
 
 		if (isset($this->request->get['information_id'])) {
-			$information_id = (int)$this->request->get['information_id'];
+			$information_id = (int) $this->request->get['information_id'];
 		} else {
 			$information_id = 0;
 		}

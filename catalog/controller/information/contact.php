@@ -68,14 +68,16 @@ class ControllerInformationContact extends Controller {
 		} else {
 			$data['image'] = false;
 		}
-
 		$data['store'] = $this->config->get('config_name');
 		$data['address'] = nl2br($this->config->get('config_address'));
 		$data['geocode'] = $this->config->get('config_geocode');
 		$data['geocode_hl'] = $this->config->get('config_language');
 		$data['telephone'] = $this->config->get('config_telephone');
+		$data['whatsapp'] = $this->config->get('config_whatsapp');
+		$data['address'] = $this->config->get('config_address');
+		$data['config_email'] = $this->config->get('config_email');
 		$data['fax'] = $this->config->get('config_fax');
-		$data['open'] = nl2br($this->config->get('config_open'));
+		$data['open'] = html_entity_decode($this->config->get('config_open'));
 		$data['comment'] = $this->config->get('config_comment');
 
 		$data['locations'] = array();
@@ -84,7 +86,6 @@ class ControllerInformationContact extends Controller {
 
 		foreach((array)$this->config->get('config_location') as $location_id) {
 			$location_info = $this->model_localisation_location->getLocation($location_id);
-
 			if ($location_info) {
 				if ($location_info['image']) {
 					$image = $this->model_tool_image->resize($location_info['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_location_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_location_height'));

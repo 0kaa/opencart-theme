@@ -1,0 +1,48 @@
+.product-wrap {
+    margin: 0 -10px;
+
+    &.column-3 {
+        .product-layout {
+            width: calc(100% / 3);
+
+            @include m576 {
+                width: 50%;
+            }
+        }
+    }
+
+    &.column-4 {
+        .product-layout {
+            width: calc(100% / 4);
+
+            @include m768 {
+                width: 33.333%;
+            }
+
+            @include m576 {
+                width: 50%;
+            }
+        }
+    }
+
+    .product-layout {
+        padding: 0 10px;
+        margin-top: 20px;
+
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+            margin: 0;
+        }
+
+        .product-inner {
+            overflow: hidden;
+            border: 2px solid transparent;
+
+            &:hover {
+                border-color: $main;
+            }
+        }
+    }
+}

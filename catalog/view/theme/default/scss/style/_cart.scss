@@ -1,6 +1,5 @@
 #cart {
     ul {
-
         li {
             color: #333;
             font-size: 14px;
@@ -34,4 +33,38 @@
             }
         }
     }
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.table {
+    .table-head-labels {
+        background-color: #343a40;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+
+        @include m576 {
+            font-size: 12px;
+        }
+    }
+
+    .table-body {
+        font-size: 16px;
+        font-weight: 600;
+
+        a {
+            color: #333;
+            text-decoration: none;
+            @include trans(all, .2s, ease-in-out);
+
+            &:hover {
+                color: $sec;
+            }
+        }
+    }
+
 }

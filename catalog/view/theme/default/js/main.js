@@ -137,12 +137,20 @@ $(document).ready(function () {
 		08- Footer Toggle
     ----------------------- */
     function mmFooterToggle() {
-        if ($(window).width() < 992) {
+        if ($(window).width() < 768) {
             $('.widget .widget-title').click(function (event) {
                 $(this).next('div').stop(true, false, true).toggleClass('widget-on');
                 event.stopPropagation();
             });
         }
+        $(window).on('resize', function () {
+            if ($(window).width() < 768) {
+                $('.widget .widget-title').click(function (event) {
+                    $(this).next('div').stop(true, false, true).toggleClass('widget-on');
+                    event.stopPropagation();
+                });
+            }
+        });
     }
     mmFooterToggle();
 });

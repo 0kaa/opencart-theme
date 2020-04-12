@@ -5,13 +5,15 @@
     font-size: 16px;
 
     .widget {
-        margin-bottom: 30px;
+        @include m768 {
+            margin-bottom: 30px;
+        }
     }
 
     .widget-inner {
         position: relative;
 
-        @include m992 {
+        @include m768 {
             display: none;
 
             &.widget-on {
@@ -23,7 +25,9 @@
 
     .widget-title {
         position: relative;
-
+        @include m768 {
+            cursor: pointer;
+        }
         .footer-title {
             font-size: 16px;
             text-transform: uppercase;

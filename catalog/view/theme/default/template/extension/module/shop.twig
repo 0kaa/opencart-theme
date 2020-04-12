@@ -1,0 +1,38 @@
+<div class="shop">
+	<ul class="product-wrap column-4 d-flex flex-wrap">
+		{% for product in products %}
+			<li id="product-{{product.product_id}}" class="product-layout ">
+				<div class="product-inner">
+					<div class="product-thumb">
+						<div class="image">
+							<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive"/></a>
+						</div>
+					</div>
+					<div class="product-meta">
+						<a class="product-manufacturer" href="{{ product.manufacturer_href }}">{{ product.manufacturer }}</a>
+						<h4 class="product-title">
+							<a href="{{ product.href }}">{{ product.name }}</a>
+						</h4>
+						{% if product.price %}
+							<p class="price">
+								{% if not product.special %}
+									<span>{{ product.price }}</span>
+								{% else %}
+									<span class="price-new">{{ product.special }}</span>
+									<span class="price-old">{{ product.price }}</span>
+								{% endif %}
+							</p>
+						{% endif %}
+
+						<div class="button-group">
+							<button class="add-to-cart" type="button" onclick="cart.add('{{ product.product_id }}');">
+								<i class="fa fa-shopping-basket"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</li>
+
+		{% endfor %}
+	</ul>
+</div>

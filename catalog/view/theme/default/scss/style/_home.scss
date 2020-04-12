@@ -17,42 +17,13 @@
 
 .deals {
     padding: 100px 0 80px;
-
-
-
-    .owl-carousel .owl-nav .owl-prev,
-    .owl-carousel .owl-nav .owl-next {
-        position: absolute;
-        top: 20%;
-        padding: 6px 12px !important;
-        text-align: center;
-        font-size: 30px;
-        border: 0px;
-        background-color: #00737a;
-        color: #fff;
-    }
-
-    .owl-carousel .owl-nav {
-        display: block;
-    }
-
-    .owl-carousel .owl-prev {
-        left: 0;
-    }
-
-    .owl-carousel .owl-next {
-        right: 0;
-    }
 }
 
 .product-layout {
     text-align: center;
-    border: 2px solid transparent;
     overflow: hidden;
 
     &:hover {
-        border: 2px solid $main;
-
         .product-meta {
             .add-to-cart {
                 right: 10px;

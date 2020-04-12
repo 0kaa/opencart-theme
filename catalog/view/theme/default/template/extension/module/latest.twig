@@ -4,10 +4,10 @@
 			<h3 class="section-title">{{ heading_title }}</h3>
 			<p class="section-desc">{{description}}</p>
 		</div>
-		<div class="row">
+		<ul class="product-wrap column-4 d-flex flex-wrap">
 			{% for product in products %}
-				<div class="col-lg-3 col-md-4 col-6">
-					<div id="product-{{product.product_id}}" class="product-layout ">
+				<li id="product-{{product.product_id}}" class="product-layout">
+					<div class="product-inner">
 						<div class="product-thumb">
 							<div class="image">
 								<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive"/></a>
@@ -30,13 +30,15 @@
 							{% endif %}
 
 							<div class="button-group">
-								<button class="add-to-cart" type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-basket"></i></button>
+								<button class="add-to-cart" type="button" onclick="cart.add('{{ product.product_id }}');">
+									<i class="fa fa-shopping-basket"></i>
+								</button>
 							</div>
 						</div>
 					</div>
+				</li>
 
-				</div>
 			{% endfor %}
-		</div>
+		</ul>
 	</div>
 </div>

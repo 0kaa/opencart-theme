@@ -1,41 +1,43 @@
-<div class="deals">
+<div class="deals navs-owl">
 	<div class="container">
 		<div class="heading mb-4">
 			<h3 class="section-title">{{ heading_title }}</h3>
 			<p class="section-desc">{{description}}</p>
 		</div>
-		<div class="owl-carousel owl-theme deals-swiper">
+		<div class="owl-carousel owl-theme deals-swiper product-wrap">
 			{% for product in products %}
 				<div id="product-{{product.product_id}}" class="product-layout">
-					<div class="product-thumb">
-						<div class="image">
-							<a href="{{ product.href }}">
-								<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid"/>
-							</a>
+					<div class="product-inner">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="{{ product.href }}">
+									<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid"/>
+								</a>
+							</div>
 						</div>
-					</div>
-					<div class="product-meta">
-						<a class="product-manufacturer" href="{{ product.manufacturer_href }}">{{ product.manufacturer }}</a>
+						<div class="product-meta">
+							<a class="product-manufacturer" href="{{ product.manufacturer_href }}">{{ product.manufacturer }}</a>
 
-						<h4 class="product-title">
-							<a href="{{ product.href }}">{{ product.name }}</a>
-						</h4>
-						{% if product.price %}
-							<p class="price">
-								{% if not product.special %}
-									<span>{{ product.price }}</span>
-								{% else %}
-									<span class="price-new">{{ product.special }}</span>
-									<span class="price-old">{{ product.price }}</span>
-								{% endif %}
-							</p>
-						{% endif %}
+							<h4 class="product-title">
+								<a href="{{ product.href }}">{{ product.name }}</a>
+							</h4>
+							{% if product.price %}
+								<p class="price">
+									{% if not product.special %}
+										<span>{{ product.price }}</span>
+									{% else %}
+										<span class="price-new">{{ product.special }}</span>
+										<span class="price-old">{{ product.price }}</span>
+									{% endif %}
+								</p>
+							{% endif %}
 
-						<div class="button-group">
-							<button class="add-to-cart" type="button" onclick="cart.add('{{ product.product_id }}');">
-								<i class="fa fa-shopping-basket"></i>
+							<div class="button-group">
+								<button class="add-to-cart" type="button" onclick="cart.add('{{ product.product_id }}');">
+									<i class="fa fa-shopping-basket"></i>
+								</button>
 							</button>
-						</button>
+						</div>
 					</div>
 				</div>
 			</div>

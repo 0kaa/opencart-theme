@@ -1,0 +1,99 @@
+#information-contact {
+    h3 {
+        font-weight: 600;
+        padding-bottom: 15px;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 50%;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #eee;
+            z-index: 1;
+        }
+
+        &:after {
+            content: "";
+            width: 20%;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $sec;
+            z-index: 2;
+        }
+    }
+
+    label {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    li {
+        position: relative;
+        padding: 0 0 0 42px;
+        font-size: 18px;
+        margin-bottom: 15px;
+
+        &:before {
+            content: "\f2c0";
+            font-family: "Fontawesome";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: normal;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            background-color: $main;
+            color: #fff;
+        }
+
+        &.address {
+            &:before {
+                content: "\f041";
+            }
+        }
+
+        &.tel {
+            &:before {
+                content: "\f095";
+            }
+        }
+
+        &.mobile {
+            &:before {
+                content: "\f10b";
+            }
+        }
+
+        &.whatsapp {
+            &:before {
+                content: "\f232";
+            }
+        }
+
+        &.email {
+            &:before {
+                content: "\f003";
+            }
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    .working-time {
+        li {
+            &:before {
+                content: "\f017";
+            }
+        }
+    }
+}
