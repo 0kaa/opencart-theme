@@ -18,7 +18,6 @@ class ControllerCommonMenu extends Controller {
 				$children_data = array();
 
 				$children = $this->model_catalog_category->getCategories($category['category_id']);
-
 				foreach ($children as $child) {
 					$filter_data = array(
 						'filter_category_id'  => $child['category_id'],
@@ -40,7 +39,7 @@ class ControllerCommonMenu extends Controller {
 				);
 			}
 		}
-		
+
 
 		return $this->load->view('common/menu', $data);
 	}

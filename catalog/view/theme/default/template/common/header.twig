@@ -25,7 +25,11 @@
 		<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
 		<link href="catalog/view/theme/default/stylesheet/owl.carousel.min.css" rel="stylesheet">
-		<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+		<link href="catalog/view/theme/default/stylesheet/stylesheet.css?v=1.1.0" rel="stylesheet">
+		{% if lang == 'ar' %}
+			{% set bodyclass = 'class="rtl"' %}
+			<link href="catalog/view/theme/default/stylesheet/stylesheet-rtl.css" rel="stylesheet">
+		{% endif %}
 		{% for style in styles %}
 			<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}"/>
 		{% endfor %}
@@ -42,10 +46,10 @@
 			{{ analytic }}
 		{% endfor %}
 	</head>
-	<body>
+	<body {{bodyclass}}>
 		<header class="ae-header">
 			<div class="container">
-				<div class="d-flex justify-content-between">
+				<div class="d-flex justify-content-between align-items-center top-bar">
 					<div class="d-flex align-items-center">
 						<div id="logo">
 							{% if logo %}
@@ -57,7 +61,7 @@
 							{% endif %}
 						</div>
 					</div>
-					<div class="d-flex align-items-center">{{ search }}</div>
+					<div class="d-flex align-items-center">{{ currency }}{{ search }}</div>
 					<div class="d-flex align-items-center">
 
 						{% if logged %}
@@ -73,14 +77,9 @@
 										{{text_login}}
 									</a>
 								</li>
-								<li class="separator">/</li>
-								<li>
-									<a href="{{ register }}">{{ text_register }}</a>
-								</li>
 							</ul>
 						{% endif %}
 						{{ cart }}
-						{{ currency }}
 					</div>
 				</div>
 			</div>
@@ -92,7 +91,7 @@
 							<div class="d-flex align-items-center">
 								<ul class="d-flex align-items-center list-unstyled nav-wrap">
 									<li>
-										<a href="{{home}}">Home</a>
+										<a href="{{home}}">{{text_home}}</a>
 									</li>
 									{% for information in informations %}
 										<li>
@@ -100,7 +99,10 @@
 										</li>
 									{% endfor %}
 									<li>
-										<a href="{{contact}}">Contact Us</a>
+										<a href="{{contact}}">{{contact_text}}</a>
+									</li>
+									<li>
+										{{language}}
 									</li>
 								</ul>
 							</div>
@@ -206,7 +208,7 @@
 				{% if informations %}
 					<ul class="list-unstyled nav-wrap">
 						<li>
-							<a href="{{home}}">Home</a>
+							<a href="{{home}}">{{text_home}}</a>
 						</li>
 						{% for information in informations %}
 							<li>
@@ -214,7 +216,10 @@
 							</li>
 						{% endfor %}
 						<li>
-							<a href="{{contact}}">Contact Us</a>
+							<a href="{{contact}}">{{contact_text}}</a>
+						</li>
+						<li>
+							{{language}}
 						</li>
 					</ul>
 				{% endif %}

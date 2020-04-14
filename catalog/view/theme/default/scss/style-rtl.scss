@@ -1,0 +1,94 @@
+/*# sourceMappingURL=stylesheet-rtl.css.map */
+body {
+    direction: rtl;
+    unicode-bidi: embed;
+    font-family: "NeoSansArabic", Georgia, serif !important;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'NeoSansArabic';
+    src: url("../fonts/NeoSansArabic-Medium.eot");
+    src: url("../fonts/NeoSansArabic-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabic-Medium.woff") format("woff"), url("../fonts/NeoSansArabic-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeoSansArabic';
+    src: url("../fonts/NeoSansArabic-Bold.eot");
+    src: url("../fonts/NeoSansArabic-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabic-Bold.woff") format("woff"), url("../fonts/NeoSansArabic-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeoSansArabic';
+    src: url("../fonts/NeoSansArabic.eot");
+    src: url("../fonts/NeoSansArabic.eot?#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabic.woff") format("woff"), url("../fonts/NeoSansArabic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
+.product-layout {
+    .product-meta {
+
+        .product-manufacturer,
+        .price {
+            font-size: 14px;
+        }
+
+        .product-title {
+            a {
+                font-size: 14px;
+            }
+        }
+
+
+    }
+}
+
+// Heading
+.heading {
+    .section-desc {
+        font-size: 14px;
+    }
+}
+
+// Owl Carousel
+
+.navs-owl {
+    .owl-carousel {
+        .owl-next {
+            right:inherit;
+            left:0;
+        }
+        .owl-prev {
+            left:inherit;
+            right:0;
+        }
+    }
+}

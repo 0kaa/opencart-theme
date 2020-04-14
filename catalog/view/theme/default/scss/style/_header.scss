@@ -5,10 +5,14 @@
         display: none;
     }
 
+    //top bar
+
+    .top-bar {
+        padding: 40px 0 20px;
+    }
+
     // Header Logo
     #logo {
-        margin: 20px 0;
-
         img {
             width: 250px;
         }
@@ -104,15 +108,61 @@
     }
 }
 
+
+// Currency
+
 .currency {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+
     .btn-currency {
         color: #fff;
         text-decoration: none;
         @include trans(all, .3s, linear);
-
+        box-shadow: none;
+            outline: inherit;
+            border: none;
         &:hover {
             color: $light;
         }
+    }
+
+    .dropdown-menu {
+        padding: 0;
+        border-radius: 0;
+
+        .dropdown-item {
+            padding: 0;
+            box-shadow: none;
+            outline: inherit;
+            border: none;
+
+            &:active {
+                color: #fff;
+                text-decoration: none;
+                background-color: $main;
+
+                button {
+                    color: #fff;
+                }
+            }
+
+        }
+    }
+
+    .currency-select {
+        font-size: 14px;
+        border: none;
+        background: none;
+        outline: inherit;
+        border: none;
+        box-shadow: none;
+        padding: .25rem 1.5rem;
     }
 }
 
@@ -191,7 +241,7 @@
         font-weight: bold;
         text-transform: uppercase;
         width: 250px;
-        text-align: left;
+        text-align: start;
         font-size: 14px;
         border: none;
         outline: inherit;

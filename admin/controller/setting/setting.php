@@ -168,23 +168,30 @@ class ControllerSettingSetting extends Controller {
 
 		$data['user_token'] = $this->session->data['user_token'];
 
+
 		if (isset($this->request->post['config_meta_title'])) {
-			$data['config_meta_title'] = $this->request->post['config_meta_title'];
-		} else {
-			$data['config_meta_title'] = $this->config->get('config_meta_title');
+            $data['config_meta_title'] = $this->request->post['config_meta_title'];
+        } elseif ($this->config->has('config_meta_title')) {
+            $data['config_meta_title'] = $this->config->get('config_meta_title');
+        } else {
+            $data['config_meta_title'] = array();
 		}
 
 		if (isset($this->request->post['config_meta_description'])) {
-			$data['config_meta_description'] = $this->request->post['config_meta_description'];
-		} else {
-			$data['config_meta_description'] = $this->config->get('config_meta_description');
+            $data['config_meta_description'] = $this->request->post['config_meta_description'];
+        } elseif ($this->config->has('config_meta_description')) {
+            $data['config_meta_description'] = $this->config->get('config_meta_description');
+        } else {
+            $data['config_meta_description'] = array();
 		}
 
 		if (isset($this->request->post['config_meta_keyword'])) {
-			$data['config_meta_keyword'] = $this->request->post['config_meta_keyword'];
-		} else {
-			$data['config_meta_keyword'] = $this->config->get('config_meta_keyword');
-		}
+            $data['config_meta_keyword'] = $this->request->post['config_meta_keyword'];
+        } elseif ($this->config->has('config_meta_keyword')) {
+            $data['config_meta_keyword'] = $this->config->get('config_meta_keyword');
+        } else {
+            $data['config_meta_keyword'] = array();
+        }
 
 		if (isset($this->request->post['config_theme'])) {
 			$data['config_theme'] = $this->request->post['config_theme'];
@@ -224,10 +231,12 @@ class ControllerSettingSetting extends Controller {
 		$data['layouts'] = $this->model_design_layout->getLayouts();
 
 		if (isset($this->request->post['config_name'])) {
-			$data['config_name'] = $this->request->post['config_name'];
-		} else {
-			$data['config_name'] = $this->config->get('config_name');
-		}
+            $data['config_name'] = $this->request->post['config_name'];
+        } elseif ($this->config->has('config_name')) {
+            $data['config_name'] = $this->config->get('config_name');
+        } else {
+            $data['config_name'] = array();
+        }
 
 		if (isset($this->request->post['config_owner'])) {
 			$data['config_owner'] = $this->request->post['config_owner'];
@@ -236,10 +245,13 @@ class ControllerSettingSetting extends Controller {
 		}
 
 		if (isset($this->request->post['config_address'])) {
-			$data['config_address'] = $this->request->post['config_address'];
-		} else {
-			$data['config_address'] = $this->config->get('config_address');
-		}
+            $data['config_address'] = $this->request->post['config_address'];
+        } elseif ($this->config->has('config_address')) {
+            $data['config_address'] = $this->config->get('config_address');
+        } else {
+            $data['config_address'] = array();
+        }
+
 
 		if (isset($this->request->post['config_geocode'])) {
 			$data['config_geocode'] = $this->request->post['config_geocode'];
@@ -252,6 +264,14 @@ class ControllerSettingSetting extends Controller {
 		} else {
 			$data['config_email'] = $this->config->get('config_email');
 		}
+
+		if (isset($this->request->post['config_address'])) {
+            $data['config_address'] = $this->request->post['config_address'];
+        } elseif ($this->config->has('config_address')) {
+            $data['config_address'] = $this->config->get('config_address');
+        } else {
+            $data['config_address'] = array();
+        }
 
 		if (isset($this->request->post['config_telephone'])) {
 			$data['config_telephone'] = $this->request->post['config_telephone'];
@@ -910,10 +930,6 @@ class ControllerSettingSetting extends Controller {
 
 		if ((utf8_strlen($this->request->post['config_owner']) < 3) || (utf8_strlen($this->request->post['config_owner']) > 64)) {
 			$this->error['owner'] = $this->language->get('error_owner');
-		}
-
-		if ((utf8_strlen($this->request->post['config_address']) < 3) || (utf8_strlen($this->request->post['config_address']) > 256)) {
-			$this->error['address'] = $this->language->get('error_address');
 		}
 
 		if ((utf8_strlen($this->request->post['config_email']) > 96) || !filter_var($this->request->post['config_email'], FILTER_VALIDATE_EMAIL)) {

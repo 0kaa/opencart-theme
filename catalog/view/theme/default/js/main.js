@@ -51,6 +51,7 @@ $(document).ready(function () {
 
     $(".deals-swiper").owlCarousel({
         loop: true,
+        rtl:true,
         nav: true,
         margin:10,
         dots: false,
@@ -75,6 +76,7 @@ $(document).ready(function () {
     $(".tools-carousel").owlCarousel({
         loop: false,
         nav: true,
+        rtl:true,
         dots: true,
         responsive: {
             0: {

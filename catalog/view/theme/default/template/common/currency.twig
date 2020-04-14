@@ -2,7 +2,7 @@
 	<div class="currency">
 		<form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-currency">
 			<div class="btn-group">
-				<button class="btn dropdown-toggle btn-currency" data-toggle="dropdown">
+				<button class="btn dropdown-toggle btn-currency" data-toggle="dropdown" aria-expanded="false">
 					{% for currency in currencies %}
 						{% if currency.symbol_left and currency.code == code %}
 							<strong>{{ currency.symbol_left }}</strong>
@@ -10,18 +10,18 @@
 							<strong>{{ currency.symbol_right }}</strong>
 						{% endif %}
 					{% endfor %}
-
+					<strong>{{ text_currency }}</strong>
 				</button>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu" x-placement="bottom-start">
 					{% for currency in currencies %}
 						{% if currency.symbol_left %}
-							<li>
-								<button class="currency-select btn btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_left }}
+							<li class="dropdown-item">
+								<button class="currency-select btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_left }}
 									{{ currency.title }}</button>
 							</li>
 						{% else %}
-							<li>
-								<button class="currency-select btn btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_right }}
+							<li class="dropdown-item">
+								<button class="currency-select btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_right }}
 									{{ currency.title }}</button>
 							</li>
 						{% endif %}

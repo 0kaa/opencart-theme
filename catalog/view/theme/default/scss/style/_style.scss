@@ -5,9 +5,16 @@ ul {
 }
 
 body {
-    font-size: 14px;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+
+    text-align: start;
     color: #333;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 14px;
 }
 
 #common-home {
@@ -20,6 +27,7 @@ body {
         font-size: 32px;
         font-weight: bold;
         margin-bottom: 0;
+        line-height: 1.5;
     }
 
     .section-desc {
@@ -167,6 +175,7 @@ body {
 }
 
 .navs-owl {
+
     .owl-carousel .owl-nav .owl-prev,
     .owl-carousel .owl-nav .owl-next {
         position: absolute;

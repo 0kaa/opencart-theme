@@ -69,15 +69,15 @@ class ControllerInformationContact extends Controller {
 			$data['image'] = false;
 		}
 		$data['store'] = $this->config->get('config_name');
-		$data['address'] = nl2br($this->config->get('config_address'));
+		$data['address'] = $this->config->get('config_address')[$this->session->data['language']];
 		$data['geocode'] = $this->config->get('config_geocode');
 		$data['geocode_hl'] = $this->config->get('config_language');
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['whatsapp'] = $this->config->get('config_whatsapp');
-		$data['address'] = $this->config->get('config_address');
+		$data['address'] = $this->config->get('config_address')[$this->session->data['language']];
 		$data['config_email'] = $this->config->get('config_email');
 		$data['fax'] = $this->config->get('config_fax');
-		$data['open'] = html_entity_decode($this->config->get('config_open'));
+		$data['open'] = html_entity_decode($this->config->get('config_open')[$this->session->data['language']]);
 		$data['comment'] = $this->config->get('config_comment');
 
 		$data['locations'] = array();

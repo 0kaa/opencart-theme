@@ -42,12 +42,12 @@ $(document).ready(function() {
 	});
 
 	// Language
-	$('#form-language .language-select').on('click', function(e) {
+	$('form[data-form="form-language"] .language-select').on('click', function(e) {
 		e.preventDefault();
 
-		$('#form-language input[name=\'code\']').val($(this).attr('name'));
+		$('form[data-form="form-language"] input[name=\'code\']').val($(this).attr('name'));
 
-		$('#form-language').submit();
+		$('form[data-form="form-language"]').submit();
 	});
 
 	/* Search */

@@ -35,11 +35,11 @@ class ControllerCommonFooter extends Controller
 		} else {
 			$data['logo'] = '';
 		}
-		$data['name'] = $this->config->get('config_name');
+		$data['name'] = $this->config->get('config_name')[$this->session->data['language']];
 		$data['home'] = $this->url->link('common/home');
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['whatsapp'] = $this->config->get('config_whatsapp');
-		$data['config_address'] = $this->config->get('config_address');
+		$data['config_address'] = $this->config->get('config_address')[$this->session->data['language']];
 		$data['config_email'] = $this->config->get('config_email');
 		$data['contact'] = $this->url->link('information/contact');
 		$data['return'] = $this->url->link('account/return/add', '', true);
@@ -54,7 +54,7 @@ class ControllerCommonFooter extends Controller
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true);
 
-		$data['powered'] = '&copy; ' . $this->config->get('config_name') . $this->language->get('text_powered');
+		$data['powered'] = '&copy; ' . $this->config->get('config_name')[$this->session->data['language']] . $this->language->get('text_powered');
 
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
